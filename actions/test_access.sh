@@ -1,6 +1,7 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-set -euo pipefail
+set -eu
+set +o pipefail
 
 echo check cargo
 cargo version
