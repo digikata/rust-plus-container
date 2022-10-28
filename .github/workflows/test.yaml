@@ -1,0 +1,16 @@
+name: Test run img
+on:
+  workflow_dispatch:
+
+jobs:
+  test_access:
+    runs-on: ubuntu-latest
+    container:
+      image: digikata/rust-plus-container
+
+    steps:
+      - name: test access
+        run: |
+          cargo version
+          aws --version
+          helm version
