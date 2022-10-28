@@ -1,5 +1,5 @@
 
-FROM rust:bullseye
+FROM rust:slim-bullseye
 
 RUN apt-get update && apt-get -y upgrade
 
