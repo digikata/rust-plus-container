@@ -9,5 +9,15 @@ jobs:
       image: ghcr.io/digikata/rust-plus-container:latest
 
     steps:
-      - name: test access
+      - name: test shell access
+        run: |
+          echo check cargo
+          cargo version
+          echo check aws
+          aws --version
+          echo check helm
+          helm version
+
+      - uses: actions/checkout@v3
+      - name: test repo access
         run: actions/test_access.sh
