@@ -6,8 +6,7 @@ RUN apt-get update && apt-get -y upgrade
 # misc rust
 RUN rustup component add clippy
 RUN rustup target add wasm32-unknown-unknown
-RUN rustup target add wasm32-unknown-unknown
-RUN rustup aarch64-unknown-linux-musl
+RUN rustup target add aarch64-unknown-linux-musl
 
 # aws cli
 # There is an x86 version too

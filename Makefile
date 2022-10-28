@@ -1,6 +1,7 @@
 
 default:
-	echo build - build docker
+	@echo build - build docker
+	@echo run - testing, run in container
 
 build:
 	docker build -f Dockerfile container -t rust-plus:latest
