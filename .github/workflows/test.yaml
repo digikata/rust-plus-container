@@ -6,7 +6,7 @@ jobs:
   test_access:
     runs-on: ubuntu-latest
     container:
-      image: digikata/rust-plus-container
+      image: ghcr.io/digikata/rust-plus-container:latest
 
     steps:
       - name: test access
