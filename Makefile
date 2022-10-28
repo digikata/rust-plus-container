@@ -9,3 +9,8 @@ build:
 run:
 	docker run -it --rm -v `pwd`:/opt rust-plus:latest
 
+build-smol:
+	docker build -f smol.Dockerfile container -t smol:latest
+
+run-smol:
+	docker run -it --rm -v `pwd`:/opt smol:latest
