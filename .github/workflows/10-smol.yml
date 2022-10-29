@@ -1,0 +1,17 @@
+name: A pipeline for smol container
+on:
+  workflow_dispatch:
+
+jobs:
+  start:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+  publish-smol:
+    needs: start
+    uses: ./.github/workflows/publish-smol.yml
+
+  test-smol:
+    needs: publish-smol
+    uses: ./.github/workflows/test-smol.yml

@@ -1,0 +1,12 @@
+name: 10 pipeline for rust-plus-container
+on:
+  workflow_dispatch:
+
+jobs:
+  publish:
+    uses: ./.github/workflows/publish.yml
+
+  test:
+    needs: publish
+    uses: ./.github/workflows/test.yml
+
