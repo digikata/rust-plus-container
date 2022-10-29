@@ -1,8 +1,9 @@
 
 FROM alpine:3.16
 
-RUN apk add --no-cache curl
 RUN apk add --no-cache aws-cli
+RUN apk add --no-cache curl
+RUN apk add --no-cache bash
 
 # RUN apk add --no-cache python
 # RUN apk add --no-cache zip
