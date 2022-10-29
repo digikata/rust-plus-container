@@ -1,12 +1,20 @@
 name: 10 pipeline for rust-plus-container
 on:
+  workflow_call:
   workflow_dispatch:
 
 jobs:
+  start:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
   publish:
+    name: publish rust-plus
+    needs: start
     uses: ./.github/workflows/publish.yml
 
   test:
+    name: test published rust-plus
     needs: publish
     uses: ./.github/workflows/test.yml
-

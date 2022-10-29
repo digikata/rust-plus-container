@@ -1,0 +1,20 @@
+name: 00 full pipeline
+on:
+  workflow_dispatch:
+
+jobs:
+  start:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+  rust-plus:
+    needs: start
+    name: rust-plus pub and test
+    uses: ./.github/workflows/10-rust-plus-container.yml
+
+  smol:
+    needs: start
+    name: smol pub and test
+    uses: ./.github/workflows/10-smol.yml
+
