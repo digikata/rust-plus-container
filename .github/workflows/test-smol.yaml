@@ -6,7 +6,7 @@ jobs:
   test_access:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/digikata/rust-plus-container:latest
+      image: ghcr.io/digikata/smol:latest
 
     steps:
       - name: test shell access
